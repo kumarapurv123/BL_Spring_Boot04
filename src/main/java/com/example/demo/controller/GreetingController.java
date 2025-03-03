@@ -4,6 +4,7 @@ package com.example.demo.controller;
 import com.example.demo.Service.GreetingService;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
@@ -15,9 +16,12 @@ public class GreetingController {
     }
 
     @GetMapping
-    public String getGreeting() {
-        return greetingService.getGreeting();
+    public String getGreeting(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName) {
+        return greetingService.getGreeting(firstName, lastName);
     }
+
 
     @PostMapping
     public String createGreeting() {
