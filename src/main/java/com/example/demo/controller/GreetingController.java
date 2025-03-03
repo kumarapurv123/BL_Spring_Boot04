@@ -24,7 +24,7 @@ public class GreetingController {
 
 
     @PostMapping
-    public Greeting createGreeting(@RequestParam String message) {
+    public Greeting createGreeting(@RequestBody String message) {
         return greetingService.saveGreeting(message);
     }
 
