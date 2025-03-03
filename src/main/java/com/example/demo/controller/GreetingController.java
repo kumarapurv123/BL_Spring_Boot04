@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.DTO.Greeting;
 import com.example.demo.Service.GreetingService;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/greeting")
@@ -24,8 +24,8 @@ public class GreetingController {
 
 
     @PostMapping
-    public String createGreeting() {
-        return greetingService.createGreeting();
+    public Greeting createGreeting(@RequestParam String message) {
+        return greetingService.saveGreeting(message);
     }
 
     @PutMapping
