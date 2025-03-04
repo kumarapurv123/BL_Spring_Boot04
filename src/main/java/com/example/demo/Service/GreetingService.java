@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 import java.util.List;
-import java.util.Optional;
 
-import java.util.List;
-import java.util.Optional;
+
+
 
 @Service
 public class GreetingService {
@@ -50,7 +49,11 @@ public class GreetingService {
         });
     }
 
-    public String deleteGreeting() {
-        return "{\"message\": \"Greeting Deleted!\"}";
+    public boolean deleteGreeting(Long id) {
+        if (greetingRepository.existsById(id)) {
+            greetingRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
