@@ -6,6 +6,9 @@ import com.example.demo.Service.GreetingService;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
@@ -25,12 +28,16 @@ public class GreetingController {
 
 
     @PostMapping
-    public Greeting createGreeting(@RequestBody String message) {
+    public Greeting createGreeting(@RequestParam String message) {
         return greetingService.saveGreeting(message);
     }
     @GetMapping("/{id}")
     public Optional<Greeting> getGreetingById(@PathVariable Long id) {
         return greetingService.getGreetingById(id);
+    }
+    @GetMapping("/all")
+    public List<Greeting> getAllGreetings() {
+        return greetingService.getAllGreetings();
     }
 
     @PutMapping

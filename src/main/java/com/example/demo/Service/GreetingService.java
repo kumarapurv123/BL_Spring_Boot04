@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class GreetingService {
     private final GreetingRepository greetingRepository;
@@ -31,6 +34,9 @@ public class GreetingService {
     }
     public Optional<Greeting> getGreetingById(Long id) {
         return greetingRepository.findById(id);
+    }
+    public List<Greeting> getAllGreetings() {
+        return greetingRepository.findAll();
     }
 
     public String createGreeting() {
