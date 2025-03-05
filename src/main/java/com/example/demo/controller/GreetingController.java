@@ -1,13 +1,12 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.DTO.Greeting;
+import com.example.demo.Model.Greeting;
 import com.example.demo.Service.GreetingService;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/greeting")

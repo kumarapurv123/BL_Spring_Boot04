@@ -1,4 +1,4 @@
-package com.example.demo.DTO;
+package com.example.demo.Model;
 
 import jakarta.persistence.*;
 
@@ -12,6 +12,7 @@ public class Greeting {
     public Greeting() {}
 
     public Greeting(String message) {
+
         this.message = message;
     }
 
